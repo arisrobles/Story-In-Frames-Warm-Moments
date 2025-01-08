@@ -1,0 +1,256 @@
+/* Gallery Intro Section */
+.gallery-intro {
+    color: #fff;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    height: 50vh; /* Adjust height to 50% of the viewport height */
+    background-image: url('../images/header.png');
+    background-size: cover; /* Make the background cover the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+}
+
+.gallery-intro .intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make the container take up the full height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-intro {
+        height: 40vh; /* Decrease height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-intro {
+        height: 30vh; /* Further decrease height for very small screens */
+    }
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 0;
+    color: #ffffff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: #ffcc00;
+    font-size: 1.1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .gallery-caption {
+        opacity: 1; /* Always visible */
+    }
+
+    .gallery-item:hover .gallery-caption {
+        opacity: 1;
+    }
+
+    /* Adjust gallery grid layout for mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for small screens */
+    }
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darken background */
+    display: none; /* Initially hidden, shown when modal is triggered */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Overlay for background dimming when modal is active */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* Modal content */
+.modal-content {
+    position: relative;
+    max-width: 50%; /* Adjust image width for better engagement */
+    max-height: 50%; /* Adjust image height for better engagement */
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Shadow to add depth */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    transform: scale(0.8); /* Initial scale for engaging effect */
+}
+
+.modal.show .modal-content {
+    transform: scale(1); /* Smooth scale animation when modal is shown */
+}
+
+/* Image within modal */
+.modal-content img {
+    width: 100%; /* Make the image fill the modal container */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Navigation buttons for the modal */
+.modal-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the arrows */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 2em;
+    color: #fff;
+}
+
+.prev-btn, .next-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: #ffcc00; /* Highlight color */
+}
+
+/* Image count below the image, outside of modal content */
+.image-count-container {
+    position: absolute;
+    bottom: 50px; /* Position below the modal content */
+    left: 50%;
+    transform: translateX(-50%); /* Center the image count */
+    color: #fff;
+    font-size: 1.2em;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 10000; /* Ensure it's on top of modal content */
+}
+
+.close-btn:hover {
+    color: #ffcc00;
+}
+
+/* Ensure the modal is displayed */
+.modal.show {
+    display: flex;
+}
+
+/* Responsive adjustments for modal and background overlay */
+@media (max-width: 1024px) {
+    .modal-content {
+        max-width: 60%; /* Slightly larger for tablets */
+        max-height: 60%; /* Slightly larger for tablets */
+    }
+    .image-count-container {
+        bottom: 120px; /* Adjust image count position for tablet screens */
+        font-size: 1.1em; /* Slightly smaller font size for tablets */
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 70%; /* Slightly larger for smaller screens */
+        max-height: 70%; /* Slightly larger for smaller screens */
+    }
+    .image-count-container {
+        bottom: 100px; /* Adjust image count position for smaller screens */
+        font-size: 1em; /* Slightly smaller font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 100%; /* Larger for mobile devices */
+        max-height: 100%; /* Larger for mobile devices */
+    }
+    .image-count-container {
+        bottom: 200px; /* Adjust image count position for mobile screens */
+        font-size: 0.9em; /* Smaller font size for mobile screens */
+    }
+}
+
+/* Related images grid */
+.related-images-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns for large screens */
+}
+
+/* Responsive adjustments for related images */
+@media (max-width: 768px) {
+    .related-images-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row on medium screens (tablets) */
+    }
+}
+
+@media (max-width: 480px) {
+    .related-images-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row on smaller screens */
+    }
+}

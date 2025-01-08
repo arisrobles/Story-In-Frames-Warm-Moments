@@ -1,0 +1,110 @@
+/* FAQ Section Styling */
+.faq-section {
+    background-color: #2e2e2e;
+    color: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle Styling */
+.faq-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* FAQ Item Styling */
+.faq-item {
+    border-bottom: 1px solid #444;
+    margin-bottom: 20px;
+}
+
+/* FAQ Header Button Styling */
+.faq-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 22px;  /* Increased font size for FAQ questions */
+    font-weight: 500;
+    color: #fff;
+    padding: 15px;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.faq-toggle:hover {
+    background-color: #444;
+}
+
+.faq-toggle:focus {
+    outline: none;
+}
+
+/* FAQ Body Styling */
+.faq-body {
+    background-color: #383838;
+    color: #bbb;
+    font-size: 18px;  /* Increased font size for answers */
+    padding: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+.faq-body p {
+    margin-bottom: 10px;
+}
+
+.collapse.show {
+    max-height: 500px; /* Adjust based on content size */
+}
+
+/* Arrow Icon Styling */
+.faq-toggle::after {
+    content: '\2193';  /* Downward arrow */
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    color: #bbb;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow on collapse */
+.faq-toggle.collapsed::after {
+    transform: rotate(-90deg);
+}
+
+/* Improved Accessibility */
+.faq-toggle:focus-visible {
+    outline: 3px solid #ff9900;  /* Optional: Highlight when focused for accessibility */
+}
+
+/* Accordion Styling (mobile) */
+@media (max-width: 768px) {
+    .faq-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .faq-toggle {
+        font-size: 18px;  /* Smaller size for mobile */
+    }
+
+    .faq-body {
+        font-size: 16px;  /* Adjusted font size for answers on mobile */
+    }
+}

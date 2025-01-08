@@ -1,0 +1,145 @@
+/* Presets Section Styles */
+.presets {
+    color: #495057;
+    padding: 0px 0;
+    width: 100%;
+    background-color: #231f1f;
+}
+
+.presets-content {
+    max-width: 1500px;
+    margin: 0 auto; /* Centers the content */
+    padding: 0 20px; /* Adds spacing for content alignment */
+}
+
+.presets h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff; /* Light color for text to contrast with dark background */
+    margin-bottom: 15px;
+}
+
+.presets p {
+    font-size: 1.2rem;
+    color: #dcdcdc; /* Slightly lighter text for readability */
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Preset Cards Styling */
+.preset-card {
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for the card */
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid #444444; /* Dark border to give the card a distinct outline */
+    text-align: center;
+    position: relative; /* To ensure the image takes the full width */
+}
+
+.preset-card img {
+    width: 100%;
+    height: 100%; /* Ensure the image takes full height */
+    object-fit: cover; /* Ensure image covers the area */
+    border-radius: 10px;
+}
+
+/* Image Comparison Styles */
+.image-comparison-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height based on your image size */
+    overflow: hidden;
+}
+
+.before-image, .after-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%; /* Each image occupies half of the container */
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-image {
+    left: 0; /* Position before image on the left */
+    clip-path: inset(0 50% 0 0); /* Only show the left half of the before image */
+}
+
+.after-image {
+    right: 0; /* Position after image on the right */
+    clip-path: inset(0 0 0 50%); /* Only show the right half of the after image */
+}
+
+.drag-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    background-color: #b4b4b4;
+    cursor: ew-resize;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .presets .presets-content {
+        text-align: left;
+    }
+
+    .presets h3 {
+        font-size: 1.8rem;
+    }
+
+    .presets p {
+        font-size: 1rem;
+    }
+
+    .preset-card .btn {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+
+    .preset-card {
+        margin-bottom: 20px; /* Reduce margin between cards */
+    }
+
+    .col-md-4 {
+        padding: 0; /* Remove padding between cards */
+    }
+
+    /* Ensure image is fully visible in the card */
+    .preset-card img {
+        height: auto; /* Let height be adjusted based on image aspect ratio */
+    }
+}
+
+@media (max-width: 576px) {
+    .presets {
+        padding: 40px 20px;
+    }
+
+    .presets h3 {
+        font-size: 1.5rem;
+    }
+
+    .presets p {
+        font-size: 0.9rem;
+    }
+
+    .preset-card .btn {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+
+    /* Remove side margin for smaller screens */
+    .col-md-4 {
+        padding: 0; /* Ensure cards take up full width */
+    }
+
+    /* Adjust image to be fully visible */
+    .preset-card img {
+        height: 100%; /* Ensure image covers the container */
+        object-fit: cover; /* Ensure the image doesn't stretch */
+    }
+}

@@ -1,0 +1,97 @@
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #1f1f1f;
+    padding: 15px 0; /* Increased padding to make the navbar taller */
+}
+
+/* Navbar Brand (Text only logo) */
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    margin-left: 20px;
+}
+
+.logo-text {
+    font-size: 1.8rem; /* Increased font size for the logo text */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase letters */
+}
+
+/* Centering Navbar Items */
+.navbar-nav {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    width: 100%;
+    padding-left: 0;
+    margin: 0; /* Ensures no extra margin */
+}
+
+.nav-item {
+    margin: 0 30px; /* Increased space between the items */
+}
+
+.nav-link {
+    font-size: 1.6rem; /* Increased font size of navbar items */
+    text-transform: uppercase;
+    letter-spacing: 1.2px; /* Slightly increased letter spacing */
+    padding: 10px 20px; /* Increased padding for a larger clickable area */
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-link:hover {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+/* Toggler Styles */
+.navbar-toggler {
+    border-color: #fff;
+    padding: 8px 12px; /* Increased padding for the toggler button */
+}
+
+nav.navbar .nav-link {
+    font-size: 1.6rem; /* Higher specificity */
+}
+
+/* Navbar responsiveness */
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin: 15px 0; /* Adjust margin for mobile */
+    }
+
+    .navbar-brand {
+        margin-left: 0;
+        font-size: 1.5rem; /* Adjusted font size for smaller screens */
+    }
+
+    .logo-text {
+        font-size: 1.4rem; /* Adjust text size for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    nav.navbar .nav-link {
+        font-size: 1rem; /* Higher specificity */
+    }    
+
+    .logo-text {
+        font-size: 1.2rem; /* Adjust text size further for very small screens */
+    }
+
+}

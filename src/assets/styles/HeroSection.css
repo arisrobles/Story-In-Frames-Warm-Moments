@@ -1,0 +1,110 @@
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    padding: 50px 20px;
+    width: 100%; /* Full width */
+    background-color: #1f1f1f;
+    color: #f1f1f1; /* Light text color */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Hero Content */
+.hero-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1500px; /* Shorter width for content */
+    width: 100%; /* Ensure responsiveness */
+}
+
+/* Headings */
+.hero h1 {
+    font-size: 6rem;
+    background: linear-gradient(135deg, #007bff, #6c757d, #28a745);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    font-size: 4rem;
+    color: #6c757d; /* Subtle gray for secondary header */
+    margin-bottom: 20px;
+}
+
+/* Paragraph */
+.hero p {
+    font-size: 1.5rem;
+    color: #6c757d; /* Subtle gray for secondary header */
+    line-height: 1.8;
+}
+
+/* Button Styles */
+.hero-buttons .btn-success, .hero-buttons .btn-outline-light {
+    font-size: 1.4rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+}
+
+.hero-buttons .btn-outline-light:hover {
+    background-color: #17a2b8;
+    color: white;
+}
+
+/* Hero Image */
+.hero-image img {
+    width: 100%;
+    max-width: 600px; /* Restrict image size */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-content-wrapper {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons .btn-success, .hero-buttons .btn-outline-light {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .btn-success, .hero-buttons .btn-outline-light {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+}

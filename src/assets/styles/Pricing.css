@@ -1,0 +1,115 @@
+/* Outer Container for Background Styling */
+.pricing-section {
+    width: 100%; /* Full width */
+    background-color: #1f1f1f;
+  }
+  
+  /* Inner Container for Layout and Content */
+  .pricing-container {
+    width: 80%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: fff;
+  }
+  
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Forces 3 columns per row */
+    gap: 30px;
+  }
+  
+  /* Pricing Card Styles */
+  .pricing-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .pricing-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .plan-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
+  
+  .plan-subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+  }
+  
+  .price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 20px;
+  }
+  
+  .price span {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  .features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .features li {
+    font-size: 1rem;
+    color: #34495e;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .features li::before {
+    content: '\2714'; /* Unicode check mark character */
+    font-size: 1.5rem;
+    color: #2ecc71; /* Green check icon */
+    margin-right: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .pricing-container {
+      width: 90%;
+    }
+  
+    .pricing-cards {
+      grid-template-columns: 1fr;  /* Stacks the cards in one column on smaller screens */
+    }
+  }
+  
